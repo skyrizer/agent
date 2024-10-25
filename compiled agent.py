@@ -559,7 +559,8 @@ def start():
         threading.Timer(300, fetch_node_services).start()  # Refresh every 5 minutes
 
         # Start WebSocket server to listen for messages from Flutter and send Docker stats
-        ip_address = get_ip()
+        # ip_address = get_ip()
+        ip_address = "0.0.0.0"
         port = 8765
 
         start_server = websockets.serve(handle_websocket, ip_address, port)
