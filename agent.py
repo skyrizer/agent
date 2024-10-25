@@ -517,7 +517,6 @@ def get_service_status():
         for process in psutil.process_iter(['name']):
             try:
                 process_name = process.info['name'].lower()
-                print(process_name)
                 if process_name in background_processes:
                     is_running = True
                     break
